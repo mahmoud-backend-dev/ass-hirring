@@ -31,7 +31,7 @@ class AuthController {
 
     if (user) {
       if (user.resetTokenExpiredForSignup > new Date(Date.now())) {
-        fs.unlinkSync(req.file.path); 
+        fs.unlinkSync(req.file.path);
         throw new BadRequest(`Your Account Not Verified`);
       }
       if (user.resetVerifyForSignup === true) {
@@ -42,6 +42,7 @@ class AuthController {
       user.IDDocument = `${process.env.BASE_URL}/users/${req.file.filename}`;
       user.fullName = req.body.fullName;
       user.Email = req.body.Email;
+      user.phone = req.body.phone;
       user.password = req.body.password;
       user.resetTokenExpiredForSignup = Date.now() + 10 * 60 * 1000;
 
@@ -68,6 +69,7 @@ class AuthController {
     user = await User.create({
       fullName: req.body.fullName,
       Email: req.body.Email,
+      phone: req.body.phone,
       password: req.body.password,
       IDDocument: `${process.env.BASE_URL}/users/${req.file.filename}`,
     });

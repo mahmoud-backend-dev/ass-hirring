@@ -15,6 +15,10 @@ const userSchema = new Schema({
     required: [true, 'fullName required'],
     unique: [true, 'Email must be unique'],
   },
+  phone: {
+    type: String,
+    required: true,
+  },
   password: {
     type: String,
     minlength: [8, 'Too short password'],
