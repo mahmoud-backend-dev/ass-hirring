@@ -1,0 +1,1 @@
+npm i handlebars nodemailer bcryptjs jsonwebtoken express-async-handler multer uuid express-validator http-status-codes express-async-errors dotenv mongoose cors compression express-rate-limit hpp express-mongo-sanitize
