@@ -7,10 +7,10 @@ export class SignupValidator {
     return [
       body('fullName').exists().isString().withMessage(`fullName required and must be string`),
       body('Email').exists().isEmail().withMessage(`Email required and must be valid mail`),
-      body('phone').exists().isMobilePhone('ar-EG').withMessage('phone required')
+      body('phone').exists().isMobilePhone('ar-EG').withMessage('phone required and must be valid egypt phone')
         .custom((val) => {
           if (!val.startsWith('+2'))
-            throw new BadRequest('phone must be start with +2')
+            throw new BadRequest('phone must be start with +20')
           return true;
         }),
       body('password').notEmpty().withMessage('password required')
