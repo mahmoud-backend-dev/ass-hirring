@@ -41,6 +41,11 @@
 									"key": "ID",
 									"type": "file",
 									"src": "/C:/Users/MTM/OneDrive/Pictures/Screenshots/1Screen.png"
+								},
+								{
+									"key": "phone",
+									"value": "+201140179520",
+									"type": "text"
 								}
 							]
 						},
